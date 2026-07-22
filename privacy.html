@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adrift — Privacy</title>
+  <style>
+    :root {
+      --foam: #F7FBFA;
+      --ink: #0A5E66;
+      --ink-secondary: rgba(10, 94, 102, 0.62);
+      --lagoon: #3BC0BF;
+      --hairline: rgba(10, 94, 102, 0.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--foam);
+      color: var(--ink);
+      font-family: ui-rounded, "SF Pro Rounded", -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+    h1 { font-size: 1.9rem; margin: 0 0 4px; }
+    h2 { font-size: 1.15rem; margin: 2.2em 0 0.4em; }
+    p { margin: 0.6em 0; }
+    .quiet { color: var(--ink-secondary); }
+    a { color: var(--ink); text-decoration-color: var(--lagoon); text-underline-offset: 3px; }
+    ul.events {
+      list-style: none;
+      padding: 14px 16px;
+      margin: 0.8em 0;
+      background: #fff;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.82rem;
+      line-height: 1.9;
+    }
+    footer { color: var(--ink-secondary); font-size: 0.85rem; margin-top: 3em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Privacy</h1>
+    <p class="quiet">Last updated July 22, 2026</p>
+
+    <p>Adrift is built local-first. What you do on your phone stays on
+    your phone. This page is the whole story, in plain language.</p>
+
+    <h2>Your sessions stay on your phone</h2>
+    <p>Every session Adrift times — which app, when, for how long — is
+    stored only on your device. There is no account, nothing to sign
+    into, no server holding your history, and no way for us to read it.
+    Your notes to yourself are yours alone; they never leave the phone.</p>
+
+    <h2>The one exception: anonymous funnel events</h2>
+    <p>Adrift sends a small set of anonymous counting events through
+    <a href="https://telemetrydeck.com">TelemetryDeck</a>, a
+    privacy-focused analytics service that anonymizes everything it
+    receives. These events tell us things like "someone finished setup"
+    so we can see where the app loses people. They carry no session
+    contents, no timestamps of your scrolling, no note text, and nothing
+    that identifies you. Session durations are sent as coarse buckets
+    (like "3–6 minutes"), never exact numbers, and each install carries a
+    random group letter (a/b/c/d) used only to compare app variants.</p>
+    <p>This is the complete list, exactly as it appears inside the app
+    under Settings → Privacy:</p>
+    <ul class="events">
+      <li>onboarding_started</li>
+      <li>demo_session_started</li>
+      <li>setup_started (which app)</li>
+      <li>automation_start_verified</li>
+      <li>automation_stop_verified</li>
+      <li>first_real_session</li>
+      <li>session_ended (duration bucket only)</li>
+      <li>reminder_fired</li>
+      <li>app_added (which app)</li>
+      <li>repair_started (which app)</li>
+      <li>notification_permission_granted</li>
+      <li>setup_step_reached (step number)</li>
+      <li>reminder_silenced</li>
+      <li>tracker_suspected_dead (which app)</li>
+      <li>d7_active</li>
+      <li>r4_noop_stops (daily count)</li>
+      <li>paywall_viewed (which screen)</li>
+      <li>trial_started</li>
+      <li>purchase (which product)</li>
+      <li>restore_completed</li>
+      <li>trial_lapsed</li>
+      <li>free_tier_entered</li>
+      <li>funnel_beat_completed (which step, answered or skipped)</li>
+      <li>aspiration_selected (which choice)</li>
+      <li>plan_summary_viewed</li>
+      <li>trial_reminder_scheduled</li>
+      <li>voice_pack_selected (which voice)</li>
+      <li>custom_ladder_saved (how many rungs)</li>
+    </ul>
+
+    <h2>Purchases</h2>
+    <p>Adrift Pro is bought through Apple. Apple handles the payment; we
+    never see your card, your name, or your Apple ID. StoreKit tells the
+    app only whether a purchase or trial is active.</p>
+
+    <h2>What we don't do</h2>
+    <p>No tracking across apps or sites. No advertising identifiers. No
+    selling or sharing of data — there is nothing to sell. No third-party
+    SDKs beyond TelemetryDeck. The Shortcuts automations you build run
+    entirely on your device, under your control, and you can delete them
+    any time.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about any of this:
+    <a href="mailto:mschnelbach15@gmail.com">mschnelbach15@gmail.com</a>.</p>
+
+    <footer>© 2026 Max Schnelbach · <a href="index.html">Support</a></footer>
+  </main>
+</body>
+</html>
