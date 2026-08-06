@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adrift — Support</title>
+  <style>
+    :root {
+      --foam: #F7FBFA;
+      --ink: #0A5E66;
+      --ink-secondary: rgba(10, 94, 102, 0.62);
+      --lagoon: #3BC0BF;
+      --hairline: rgba(10, 94, 102, 0.14);
+      --warn-ink: #7A5212;
+      --warn-bg: #FCF4E6;
+      --warn-hairline: rgba(122, 82, 18, 0.25);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--foam);
+      color: var(--ink);
+      font-family: ui-rounded, "SF Pro Rounded", -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+    h1 { font-size: 1.9rem; margin: 0 0 4px; }
+    h2 { font-size: 1.15rem; margin: 2.2em 0 0.4em; }
+    h3 { font-size: 1rem; margin: 1.8em 0 0.3em; }
+    p { margin: 0.6em 0; }
+    .quiet { color: var(--ink-secondary); }
+    a { color: var(--ink); text-decoration-color: var(--lagoon); text-underline-offset: 3px; }
+    .step {
+      background: #fff;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 0.9em 0;
+    }
+    .step .count {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-secondary);
+      margin: 0 0 2px;
+    }
+    .step .negative {
+      color: var(--ink-secondary);
+      font-size: 0.88rem;
+      margin: 0.3em 0 0;
+    }
+    .mock { margin-top: 12px; font-size: 0.82rem; }
+    .tabbar { display: flex; gap: 6px; }
+    .tabbar span {
+      flex: 1;
+      text-align: center;
+      padding: 6px 0;
+      border-radius: 9px;
+      color: var(--ink-secondary);
+    }
+    .tabbar .on {
+      background: rgba(59, 192, 191, 0.18);
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .mockrow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: var(--foam);
+      border: 1px solid var(--hairline);
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .mockrow .sub { color: var(--ink-secondary); }
+    .mockrow .delete {
+      background: #FF3B30;
+      color: #fff;
+      font-weight: 600;
+      padding: 0 14px;
+      margin: -8px -12px -8px 0;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .warn {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-hairline);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 1.4em 0;
+      color: var(--warn-ink);
+    }
+    .warn p { margin: 0.5em 0; }
+    .warn p:first-child { margin-top: 0; }
+    .warn p:last-child { margin-bottom: 0; }
+    .sysmock {
+      background: #fff;
+      border: 1px solid var(--warn-hairline);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+    .sysmock .syslink { color: #2E6BD8; text-decoration: underline; }
+    footer { color: var(--ink-secondary); font-size: 0.85rem; margin-top: 3em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Support</h1>
+    <p class="quiet">Last updated August 5, 2026</p>
+
+    <p>Short answers, stated as facts. If yours isn't here, the
+    <a href="#contact">email at the bottom</a> reaches us directly.</p>
+
+    <h2 id="cleanup">Leaving Adrift? The 20-second cleanup.</h2>
+    <p>Leaving is fine — the tracker was always yours, not ours. It's
+    two tiny automations per tracked app in Apple's Shortcuts app, and
+    they come out as easily as they went in.</p>
+    <p class="quiet">About 20 seconds · two swipes per tracked app</p>
+
+    <div class="step">
+      <p class="count">Step 1 of 3</p>
+      <p>In Shortcuts, open the Automation tab.</p>
+      <p class="negative">Not the Shortcuts tab — Automation, in the
+      middle.</p>
+      <div class="mock tabbar" aria-hidden="true">
+        <span>Shortcuts</span><span class="on">Automation</span><span>Gallery</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="count">Step 2 of 3</p>
+      <p>Swipe left on each Adrift automation to delete it. Every
+      tracked app has two — one for opening, one for closing. Both
+      go.</p>
+      <p class="negative">Swiping all the way left deletes in one
+      motion — no Delete tap needed.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mockrow">
+          <span>When “Instagram” is opened
+            <span class="sub">· Start App Timer</span></span>
+          <span class="delete">Delete</span>
+        </div>
+        <div class="mockrow">
+          <span>When “Instagram” is closed
+            <span class="sub">· Stop App Timer</span></span>
+          <span class="delete">Delete</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="count">Step 3 of 3</p>
+      <p>Delete the Adrift app itself, like any other app.</p>
+      <p class="negative">Automations first, then the app — in that
+      order you'll never see an error.</p>
+    </div>
+
+    <p>That's the whole exit. No account to close, nothing left
+    running, nothing left behind.</p>
+
+    <div class="warn">
+      <p><strong>Deleted the app before the automations?</strong> Until
+      they're removed, iOS shows an “Automation failed” banner over the
+      tracked app on every open and every close. Inside the broken
+      automation, Shortcuts reports:</p>
+      <div class="sysmock" aria-hidden="true">
+        Unknown — this action could not be found<br>
+        <span class="syslink">Update Shortcuts</span>
+      </div>
+      <p>That “Update Shortcuts” link is a dead end — updating
+      Shortcuts fixes nothing. Deleting the automation does. Steps 1
+      and 2 above are still the whole fix.</p>
+    </div>
+
+    <h3>Coming back?</h3>
+    <p>Reinstalling Adrift revives your automations automatically — no
+    re-setup, they just start working again. If one direction still
+    errors after a reinstall (opening records, closing fails), open
+    that automation in Shortcuts and back out without changing
+    anything. Viewing it is enough to re-link the action.</p>
+
+    <h2>Questions</h2>
+
+    <h3>Can one automation cover all my apps?</h3>
+    <p>No. The Shortcuts trigger can watch several apps at once, but
+    the action inside can record only one, so every session from the
+    other apps would be logged under the wrong name. One open and one
+    close automation per tracked app is what keeps your numbers
+    honest.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>Setup trouble, a banner that won't quit, or anything else —
+    email
+    <a href="mailto:mschnelbach15@gmail.com">mschnelbach15@gmail.com</a>
+    and you'll hear back from one of us.</p>
+
+    <footer>© 2026 Max Schnelbach ·
+      <a href="index.html">Adrift</a> ·
+      <a href="privacy.html">Privacy</a></footer>
+  </main>
+</body>
+</html>
