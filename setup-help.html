@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adrift — Setup</title>
+  <style>
+    :root {
+      --foam: #F7FBFA;
+      --ink: #0A5E66;
+      --ink-secondary: rgba(10, 94, 102, 0.62);
+      --lagoon: #3BC0BF;
+      --hairline: rgba(10, 94, 102, 0.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--foam);
+      color: var(--ink);
+      font-family: ui-rounded, "SF Pro Rounded", -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+    h1 { font-size: 1.9rem; margin: 0 0 4px; }
+    h2 { font-size: 1.15rem; margin: 2.2em 0 0.4em; }
+    h3 { font-size: 1rem; margin: 1.8em 0 0.3em; }
+    p { margin: 0.6em 0; }
+    .quiet { color: var(--ink-secondary); }
+    a { color: var(--ink); text-decoration-color: var(--lagoon); text-underline-offset: 3px; }
+    .step {
+      background: #fff;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 0.9em 0;
+    }
+    .step .count {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-secondary);
+      margin: 0 0 2px;
+    }
+    .step .negative {
+      color: var(--ink-secondary);
+      font-size: 0.88rem;
+      margin: 0.3em 0 0;
+    }
+    .mock { margin-top: 12px; font-size: 0.82rem; }
+    .mockrow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: var(--foam);
+      border: 1px solid var(--hairline);
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-top: 8px;
+    }
+    .mockrow.on {
+      background: rgba(59, 192, 191, 0.18);
+      border-color: rgba(59, 192, 191, 0.45);
+      font-weight: 600;
+    }
+    .mockrow .dim { color: var(--ink-secondary); }
+    .mockrow .tick { color: var(--lagoon); font-weight: 700; }
+    footer { color: var(--ink-secondary); font-size: 0.85rem; margin-top: 3em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Setup</h1>
+    <p class="quiet">Last updated August 21, 2026</p>
+
+    <p>Your tracker is two small halves in Apple's Shortcuts app — one
+    notices your app open and starts the timer, one notices it close
+    and stops it. Adrift builds them with you in one visit to
+    Shortcuts. This page is the same walkthrough, written down.</p>
+
+    <h2>On a second screen</h2>
+    <p>In the app, the walkthrough is a floating video that stays on
+    screen while you build in Shortcuts. A second screen works too:
+    open this page anywhere and build on your phone — the steps below
+    are the full path, every tap.</p>
+    <!-- TODO(video hosting): the full walkthrough video has no public URL
+         yet — the app bundles its clips (ceremony-clip.mov, HEVC ~9 MB)
+         and nothing is hosted as of 2026-08-21. When it is hosted (it
+         will need an H.264/MP4 web encode), (1) embed the player in this
+         section and (2) reword the paragraph above to offer the video
+         itself, e.g.: "Play the full walkthrough on any other screen
+         while you build on your phone: <a href='VIDEO_URL'>the
+         walkthrough video</a>." The app's Stuck? sheet button — "Watch
+         the full walkthrough" — already deep-links to this page
+         (setup-help.html#step-N) expecting the video to live here. -->
+
+    <h2>The opening half</h2>
+
+    <div class="step" id="step-1">
+      <p class="count">Step 1 of 5</p>
+      <p>In the sheet Shortcuts opened, search “app”, then tap
+      <strong>App</strong>.</p>
+      <p class="negative">No sheet showing? In Shortcuts: the middle
+      Automation tab, then +. And skip “Time of Day” — Adrift never
+      needs your schedule.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mockrow"><span class="dim">Search — “app”</span></div>
+        <div class="mockrow on"><span>App</span></div>
+      </div>
+    </div>
+
+    <div class="step" id="step-2">
+      <p class="count">Step 2 of 5</p>
+      <p>Pick your app, keep “Is Opened” checked, choose
+      <strong>Run Immediately</strong>, and switch “Notify When Run”
+      off.</p>
+      <p class="negative">Leave “Is Closed” alone — that's the closing
+      half, two steps away.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mockrow on"><span>Instagram</span></div>
+        <div class="mockrow"><span>Is Opened</span><span class="tick">✓</span></div>
+        <div class="mockrow"><span class="dim">Is Closed</span><span class="dim">○</span></div>
+        <div class="mockrow on"><span>Run Immediately</span></div>
+      </div>
+    </div>
+
+    <div class="step" id="step-3">
+      <p class="count">Step 3 of 5</p>
+      <p>Choose <strong>Create New Shortcut</strong>, scroll down to
+      Adrift.</p>
+      <p class="negative">Not Stop App Timer yet — that one notices
+      you leave.</p>
+      <p class="negative">On older iOS the same button reads “New
+      Blank Automation.”</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mockrow on"><span>Create New Shortcut</span></div>
+        <div class="mockrow on"><span>Adrift</span></div>
+        <div class="mockrow on"><span>Start App Timer</span></div>
+      </div>
+    </div>
+
+    <div class="step" id="step-4">
+      <p class="count">Step 4 of 5</p>
+      <p>Pick <strong>Start App Timer</strong>, set its App to your
+      app — Shortcuts likes to be told twice — then tap Done. The
+      opening half is built.</p>
+      <p class="negative">Don't rename anything — names never matter
+      here.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mockrow"><span class="dim">Start App Timer</span></div>
+        <div class="mockrow on"><span>App: Instagram</span></div>
+      </div>
+    </div>
+
+    <h2>The closing half</h2>
+
+    <div class="step" id="step-5">
+      <p class="count">Step 5 of 5</p>
+      <p>Still in Shortcuts, tap + for the closing half: App → your
+      app → “Is Closed” → Run Immediately → <strong>Stop App
+      Timer</strong>, App set to your app. Then come back to
+      Adrift.</p>
+      <p class="negative">This time “Is Opened” stays off — noticing
+      you leave is the whole point.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mockrow"><span class="dim">Is Opened</span><span class="dim">○</span></div>
+        <div class="mockrow"><span>Is Closed</span><span class="tick">✓</span></div>
+        <div class="mockrow on"><span>Stop App Timer</span></div>
+        <div class="mockrow"><span class="dim">App: Instagram</span></div>
+      </div>
+    </div>
+
+    <p>Back in Adrift, the walkthrough is already listening. The
+    rehearsal: open your app for a few seconds and close it — each
+    half checks green as its signal arrives.</p>
+
+    <h2>Let's find the snag.</h2>
+    <p>Symptoms first, stated as facts — find yours.</p>
+
+    <h3>Nothing has arrived yet.</h3>
+    <p>Both halves live in Shortcuts — one watching “Is Opened”, one
+    “Is Closed”, each running its timer step with App set to your app,
+    Run Immediately chosen, “Notify When Run” off. Already built them?
+    Open each one and back out — that alone often re-links them. Then
+    the rehearsal: open your app for a few seconds and close it.</p>
+
+    <h3>The open landed — the close didn't.</h3>
+    <p>In Shortcuts, check the closing half: it watches for your app
+    “Is Closed” and runs Stop App Timer with App set to your app — Run
+    Immediately chosen, “Notify When Run” off. Already built? Open it
+    and back out — that alone often re-links it. Then close your app
+    again.</p>
+
+    <h3>The close landed — the open didn't.</h3>
+    <p>In Shortcuts, check the opening half: it watches for your app
+    “Is Opened” and runs Start App Timer with App set to your app —
+    Run Immediately chosen, “Notify When Run” off. Already built? Open
+    it and back out — that alone often re-links it. Then open your app
+    again.</p>
+
+    <h3>A signal arrived labeled the wrong app.</h3>
+    <p>A half in Shortcuts names the wrong app — check the app it
+    watches for and the App inside its timer step. Every app needs its
+    own pair; one shared half can't tell apps apart.</p>
+
+    <h3>Shortcuts asks before every run.</h3>
+    <p>That half was saved with Run After Confirmation, so the timer
+    waits on a tap. Open the half and choose Run Immediately — it runs
+    on its own from then on.</p>
+
+    <h3>A banner announces every open and close.</h3>
+    <p>That's “Notify When Run,” switched on. The half works; the
+    banner just narrates it. Open the half and switch “Notify When
+    Run” off.</p>
+
+    <h3>A half looks right and still won't fire.</h3>
+    <p>Open it in Shortcuts and back out without changing anything —
+    viewing it is enough to re-link the action. This is also the fix
+    when one half errors after a reinstall. Rebuilding works too, and
+    it's safe over the old ones.</p>
+
+    <h3>Leaving instead?</h3>
+    <p>The <a href="support.html#teardown">20-second cleanup</a> on
+    the support page removes both halves and the app, in the order
+    that never shows an error.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>A snag this page doesn't name — email
+    <a href="mailto:mschnelbach15@gmail.com">mschnelbach15@gmail.com</a>
+    and you'll hear back from one of us.</p>
+
+    <footer>© 2026 Max Schnelbach ·
+      <a href="index.html">Adrift</a> ·
+      <a href="support.html">Support</a> ·
+      <a href="privacy.html">Privacy</a></footer>
+  </main>
+</body>
+</html>

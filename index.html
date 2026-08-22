@@ -4,6 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adrift</title>
+  <!-- Adrift 1.0.1's remove-app card links the site root + #teardown;
+       land it on the cleanup guide. Without scripts it degrades to this
+       page's top, which links the same guide. -->
+  <script>
+    if (location.hash === "#teardown") location.replace("support.html#teardown");
+  </script>
   <style>
     :root {
       --foam: #F7FBFA;
@@ -54,6 +60,12 @@
     in Apple's Shortcuts app, guided step by step. That's the point:
     Adrift never asks permission to watch you.</p>
 
+    <h2>Setup</h2>
+    <p>In the app, the walkthrough is a floating video that stays on
+    screen while you build in Shortcuts. The same walkthrough written
+    out tap by tap — with the fixes for the common snags — is on the
+    <a href="setup-help.html">setup page</a>.</p>
+
     <h2>Support</h2>
     <p>Setup trouble, a puzzling banner, or leaving and want a clean
     exit — the <a href="support.html">support page</a> has the short
@@ -68,6 +80,7 @@
     on the <a href="privacy.html">privacy page</a>.</p>
 
     <footer>© 2026 Max Schnelbach ·
+      <a href="setup-help.html">Setup</a> ·
       <a href="support.html">Support</a> ·
       <a href="privacy.html">Privacy</a></footer>
   </main>
