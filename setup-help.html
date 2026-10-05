@@ -29,14 +29,32 @@
     h2 { font-size: 1.15rem; margin: 2.2em 0 0.4em; }
     h3 { font-size: 1rem; margin: 1.8em 0 0.3em; }
     p { margin: 0.6em 0; }
+    ul { margin: 0.6em 0; padding-left: 1.2em; }
+    li { margin: 0.35em 0; }
     .quiet { color: var(--ink-secondary); }
     a { color: var(--ink); text-decoration-color: var(--lagoon); text-underline-offset: 3px; }
+    .fork {
+      display: grid;
+      gap: 10px;
+      margin: 1.2em 0;
+    }
+    .fork a {
+      display: block;
+      background: #fff;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+    .fork a strong { display: block; }
+    .fork a span { color: var(--ink-secondary); font-size: 0.9rem; }
     .step {
       background: #fff;
       border: 1px solid var(--hairline);
       border-radius: 12px;
       padding: 14px 16px;
       margin: 0.9em 0;
+      scroll-margin-top: 16px;
     }
     .step .count {
       font-size: 0.72rem;
@@ -45,11 +63,32 @@
       color: var(--ink-secondary);
       margin: 0 0 2px;
     }
+    .step .title { font-weight: 600; margin: 0 0 0.2em; }
     .step .negative {
       color: var(--ink-secondary);
       font-size: 0.88rem;
       margin: 0.3em 0 0;
     }
+    .still {
+      margin: 12px 0 2px;
+      text-align: center;
+    }
+    .still img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--hairline);
+    }
+    .note {
+      background: #fff;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 1em 0;
+    }
+    .note p:first-child { margin-top: 0; }
+    .note p:last-child { margin-bottom: 0; }
     .mock { margin-top: 12px; font-size: 0.82rem; }
     .mockrow {
       display: flex;
@@ -69,36 +108,366 @@
     }
     .mockrow .dim { color: var(--ink-secondary); }
     .mockrow .tick { color: var(--lagoon); font-weight: 700; }
+    hr { border: none; border-top: 1px solid var(--hairline); margin: 2.5em 0; }
     footer { color: var(--ink-secondary); font-size: 0.85rem; margin-top: 3em; }
   </style>
 </head>
 <body>
   <main>
     <h1>Setup</h1>
-    <p class="quiet">Last updated August 21, 2026</p>
+    <p class="quiet">Last updated October 4, 2026</p>
 
-    <p>Your tracker is two small halves in Apple's Shortcuts app — one
-    notices your app open and starts the timer, one notices it close
-    and stops it. Adrift builds them with you in one visit to
-    Shortcuts. This page is the same walkthrough, written down.</p>
+    <p>Your tracker is two small parts in Apple's Shortcuts app. One
+    starts the timer when your app opens, and one stops it when your
+    app closes. How you add them depends on your iPhone's iOS
+    version.</p>
 
-    <h2>On a second screen</h2>
-    <p>In the app, the walkthrough is a floating video that stays on
-    screen while you build in Shortcuts. A second screen works too:
-    open this page anywhere and build on your phone — the steps below
-    are the full path, every tap.</p>
+    <div class="fork">
+      <a href="#ios27"><strong>iOS 27 or later</strong>
+        <span>From Adrift 1.0.2, two ready-made parts: add them, turn them on, done.</span></a>
+      <a href="#classic"><strong>iOS 26 or earlier</strong>
+        <span>A walkthrough that builds the two parts with you.</span></a>
+    </div>
+    <p class="quiet">Not sure which you have? Settings → General → About
+    shows your iOS version.</p>
+
+    <!-- ============================================================ -->
+    <!-- iOS 27 — the app's Stuck? buttons land on #ios27,            -->
+    <!-- #pack-step-1…3 and #editor27-step-01…14 (zero-padded).       -->
+    <!-- ============================================================ -->
+
+    <h2 id="ios27">On iOS 27: two ready-made parts</h2>
+    <p>From Adrift 1.0.2, the two parts come ready-made:
+    <strong>Adrift Opens</strong> starts the timer and
+    <strong>Adrift Closes</strong> stops it. You add
+    each one to Shortcuts and turn them on, and then Adrift checks that
+    they work. One pair covers every app Adrift can track. Adrift counts
+    only the apps you've added, and forgets the rest the moment they
+    arrive.</p>
+
+    <div class="step" id="pack-step-1">
+      <p class="count">Step 1 of 3</p>
+      <p class="title">Add the Start part.</p>
+      <p>In Adrift, tap <strong>Add to Shortcuts</strong>. Shortcuts will
+      show you this. Tap <strong>Add Shortcut</strong>, then come back. If
+      Shortcuts says you already have the part, tap
+      <strong>Cancel</strong> — it's already added.</p>
+      <p class="negative">If Shortcuts opens on its
+      <strong>Gallery</strong> page instead, come back and tap Open it
+      again. A second open shows the part.</p>
+      <div class="still"><img src="images/pack-card-1-sheet.jpg"
+        alt="Shortcuts' import sheet for Adrift Opens, with its Add Shortcut button circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="pack-step-2">
+      <p class="count">Step 2 of 3</p>
+      <p class="title">Add the Stop part.</p>
+      <p>The same as step 1, with the second part: tap <strong>Add to
+      Shortcuts</strong>, then <strong>Add Shortcut</strong>, then come
+      back. If Shortcuts says you already have the part, tap
+      <strong>Cancel</strong> — it's already added.</p>
+      <p class="negative">This second open lands on the
+      <strong>Gallery</strong> page more often than the first. Come back
+      and tap Open it again.</p>
+      <div class="still"><img src="images/pack-card-2-sheet.jpg"
+        alt="Shortcuts' import sheet for Adrift Closes, with its Add Shortcut button circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="pack-step-3">
+      <p class="count">Step 3 of 3</p>
+      <p class="title">Turn both parts on.</p>
+      <p>Adrift opens Shortcuts' <strong>Automation</strong> page. Turn on
+      <strong>Adrift Opens</strong> and <strong>Adrift Closes</strong>,
+      then come back.</p>
+      <p class="negative">New parts arrive switched off. Nothing else on
+      that page needs changing.</p>
+      <div class="still"><img src="images/pack-card-3-automation.jpg"
+        alt="Shortcuts' Automation page listing Adrift Closes and Adrift Opens, both switched off, their switches circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <h3>Then the check</h3>
+    <p>Back in Adrift, tap <strong>Check both parts</strong>. Open your
+    app for about 10 seconds, then come back to Adrift. When both parts
+    reach Adrift, the check says so. Adding and turning on are only
+    steps; the check is what proves the connection.</p>
+
+    <h3>Good to know on iOS 27</h3>
+    <ul>
+      <li><strong>Your other iPhones.</strong> Shortcuts syncs your parts
+      to your other iPhones through iCloud, switched off there. Each
+      iPhone has its own switch, so turn them on there too, from the
+      <strong>Automation</strong> page. Deleting a part in <strong>All
+      Shortcuts</strong> on one iPhone deletes it on all of them.</li>
+      <li><strong>Built parts yourself before iOS 27?</strong> The update
+      renamed them “App”, “App 2”, and so on. They still work. If you
+      add the ready-made parts too, first switch off the parts you built
+      yourself on Shortcuts' <strong>Automation</strong> page, so each
+      open starts one timer.</li>
+      <li><strong>An app you install later.</strong> The two parts listen
+      for every app Adrift can track that was on your iPhone when you
+      added them. If Adrift doesn't hear from an app you installed
+      afterward, delete <strong>Adrift Opens</strong> and <strong>Adrift
+      Closes</strong> in <strong>All Shortcuts</strong>, then add them
+      again. The fresh copies pick up every app installed now.</li>
+      <li><strong>Locking your iPhone</strong> stops the timer, on every
+      iOS version. <a href="support.html#lock">What to do after an
+      unlock</a>.</li>
+    </ul>
+
+    <h3 id="editor27">Or build the parts yourself</h3>
+    <p>Prefer to build your own? Adrift's cards teach it in Shortcuts'
+    editor: seven taps for the Start part, seven for the Stop part.
+    These parts are for one app each.</p>
+
+    <h3>The Start part</h3>
+
+    <div class="step" id="editor27-step-01">
+      <p class="count">Step 1 of 14</p>
+      <p>Adrift opens a new shortcut for you.</p>
+      <p class="negative">If you see <strong>New Shortcut</strong>,
+      you're in the right place. If the screen asks what you want your
+      shortcut to do, tap <strong>Edit</strong> at the top right. If you
+      land somewhere else, tap <strong>All Shortcuts</strong>, then
+      <strong>+</strong>.</p>
+      <div class="still"><img src="images/editor27-step-01.jpg"
+        alt="A new, empty shortcut in Shortcuts, with Edit circled at the top right."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-02">
+      <p class="count">Step 2 of 14</p>
+      <p>Tap <strong>Automation</strong>.</p>
+      <p class="negative">It's the first chip under the search field.</p>
+      <div class="still"><img src="images/editor27-step-02.jpg"
+        alt="The Automation chip under the search field, circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-03">
+      <p class="count">Step 3 of 14</p>
+      <p>Scroll to <strong>Apps</strong>, tap <strong>App</strong>.</p>
+      <p class="negative">A list of your apps opens.</p>
+      <div class="still"><img src="images/editor27-step-03.jpg"
+        alt="Shortcuts' Automation list, scrolled to App under Apps, with App circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-04">
+      <p class="count">Step 4 of 14</p>
+      <p>Pick your app, and leave <strong>Opened</strong> selected.</p>
+      <p class="negative">The block now reads “When <em>your app</em> is
+      <strong>Opened</strong>.”</p>
+      <div class="still"><img src="images/editor27-step-04.jpg"
+        alt="The first block with Opened selected."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-05">
+      <p class="count">Step 5 of 14</p>
+      <p>Tap the search bar at the bottom, search Adrift, then tap
+      <strong>Start App Timer</strong>.</p>
+      <p class="negative">Start, not Stop.</p>
+      <div class="still"><img src="images/editor27-step-05.jpg"
+        alt="The search for Adrift, with Start App Timer circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-06">
+      <p class="count">Step 6 of 14</p>
+      <p>Tap <strong>App</strong> in the timer step and pick your app
+      again.</p>
+      <p class="negative">Both places name the app.</p>
+      <div class="still"><img src="images/editor27-step-06.jpg"
+        alt="The timer step, before the app is picked, with App circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-07">
+      <p class="count">Step 7 of 14</p>
+      <p>Tap the name at the top and name it after your app, for example
+      “TikTok Start”.</p>
+      <p class="negative">Named parts are easy to find later. Then go
+      back.</p>
+      <div class="still"><img src="images/editor27-step-07.jpg"
+        alt="The shortcut's name at the top, circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <h3>The Stop part</h3>
+
+    <div class="step" id="editor27-step-08">
+      <p class="count">Step 8 of 14</p>
+      <p>Adrift opens a new shortcut for you.</p>
+      <p class="negative">If you see <strong>New Shortcut</strong>,
+      you're in the right place. If the screen asks what you want your
+      shortcut to do, tap <strong>Edit</strong> at the top right. If you
+      land somewhere else, tap <strong>All Shortcuts</strong>, then
+      <strong>+</strong>.</p>
+      <div class="still"><img src="images/editor27-step-08.jpg"
+        alt="A new, empty shortcut in Shortcuts, with Edit circled at the top right."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-09">
+      <p class="count">Step 9 of 14</p>
+      <p>Tap <strong>Automation</strong>.</p>
+      <p class="negative">It's the first chip under the search field.</p>
+      <div class="still"><img src="images/editor27-step-09.jpg"
+        alt="The Automation chip under the search field, circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-10">
+      <p class="count">Step 10 of 14</p>
+      <p>Scroll to <strong>Apps</strong>, tap <strong>App</strong>.</p>
+      <p class="negative">A list of your apps opens.</p>
+      <div class="still"><img src="images/editor27-step-10.jpg"
+        alt="Shortcuts' Automation list, scrolled to App under Apps, with App circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-11">
+      <p class="count">Step 11 of 14</p>
+      <p>Pick your app, then tap <strong>Opened</strong> and choose
+      <strong>Closed</strong>.</p>
+      <p class="negative">This is the important one. The Stop part must
+      read “When <em>your app</em> is <strong>Closed</strong>.”</p>
+      <div class="still"><img src="images/editor27-step-11.jpg"
+        alt="The first block switched from Opened to Closed."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-12">
+      <p class="count">Step 12 of 14</p>
+      <p>Tap the search bar at the bottom, search Adrift, then tap
+      <strong>Stop App Timer</strong>.</p>
+      <p class="negative">Stop, not Start.</p>
+      <div class="still"><img src="images/editor27-step-12.jpg"
+        alt="The search for Adrift, with Stop App Timer circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-13">
+      <p class="count">Step 13 of 14</p>
+      <p>Tap <strong>App</strong> in the timer step and pick your app
+      again.</p>
+      <p class="negative">Both places name the app.</p>
+      <div class="still"><img src="images/editor27-step-13.jpg"
+        alt="The timer step, before the app is picked, with App circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <div class="step" id="editor27-step-14">
+      <p class="count">Step 14 of 14</p>
+      <p>Tap the name at the top and name it after your app, for example
+      “TikTok Stop”.</p>
+      <p class="negative">Named parts are easy to find later. Then go
+      back.</p>
+      <div class="still"><img src="images/editor27-step-14.jpg"
+        alt="The shortcut's name at the top, circled."
+        width="720" height="1560" loading="lazy"></div>
+    </div>
+
+    <p>New parts built this way are switched on. Back in Adrift, the
+    check runs the same way: open your app for about 10 seconds, then
+    come back.</p>
+
+    <h2 id="ios27-snags">Let's find the snag (iOS 27).</h2>
+    <p>Symptoms first, stated as facts. Find yours.</p>
+
+    <h3>Nothing arrived during the check.</h3>
+    <p>With the ready-made parts, any of these can cause it:</p>
+    <ul>
+      <li>Both parts may still be switched off on this iPhone. On
+      Shortcuts' <strong>Automation</strong> page, turn on
+      <strong>Adrift Opens</strong> and <strong>Adrift Closes</strong>.</li>
+      <li>The parts may not have been added. If Shortcuts showed its
+      <strong>Gallery</strong> page instead of <strong>Add
+      Shortcut</strong>, add the parts again.</li>
+      <li>Your app may not have been on your iPhone when you added the
+      parts. Delete <strong>Adrift Opens</strong> and <strong>Adrift
+      Closes</strong> in <strong>All Shortcuts</strong>, then add them
+      again.</li>
+      <li>Shortcuts couldn't connect when you added a part. Add the parts
+      again once you're online.</li>
+      <li>Shortcuts may not be on this iPhone. If your iPhone offers to
+      restore Shortcuts, do that first, then add the parts again.</li>
+    </ul>
+    <p>With parts you built yourself: both may still be switched off
+    (turn them on on the <strong>Automation</strong> page), or a part may
+    watch a different app, or the <strong>App</strong> in its timer step
+    may be empty. Each part needs your app in both places. Parts built
+    before iOS 27 may be named “App”, “App 2”; open each one and check its
+    app.</p>
+
+    <h3>The open landed. The close didn't.</h3>
+    <p>With the ready-made parts: on Shortcuts'
+    <strong>Automation</strong> page, turn on <strong>Adrift
+    Closes</strong>. If it isn't listed, or it's on and still doesn't
+    reach Adrift, delete it in <strong>All Shortcuts</strong> if it's
+    there, then add the Stop part again. Then open your app for about 10
+    seconds.</p>
+    <p>With parts you built yourself: your Stop part should be switched
+    on and read “When <em>your app</em> is <strong>Closed</strong>”, with
+    <strong>App</strong> set to your app in its timer step.</p>
+
+    <h3>The close landed. The open didn't.</h3>
+    <p>With the ready-made parts: on Shortcuts'
+    <strong>Automation</strong> page, turn on <strong>Adrift
+    Opens</strong>. If it isn't listed, or it's on and still doesn't
+    reach Adrift, delete it in <strong>All Shortcuts</strong> if it's
+    there, then add the Start part again. Then open your app for about 10
+    seconds.</p>
+    <p>With parts you built yourself: your Start part should be switched
+    on and read “When <em>your app</em> is <strong>Opened</strong>”, with
+    <strong>App</strong> set to your app in its timer step.</p>
+
+    <h3>The timer stops the moment it starts.</h3>
+    <p>Both parts reached Adrift, but the stop arrived with the start.
+    Check that your Stop part is set to <strong>Closed</strong>: open it
+    in Shortcuts, tap <strong>Opened</strong> (or <strong>Opened or
+    Closed</strong>), then choose <strong>Closed</strong>. If you only
+    opened your app for a moment, try again for about 10 seconds.</p>
+
+    <h3>A signal arrived from a different app.</h3>
+    <p>Adrift was listening for your app, and the signal came from
+    another one. For the check, open the app you're setting up itself.
+    With parts you built yourself, a part may name the wrong app: check
+    the app it watches for, and the <strong>App</strong> inside its timer
+    step.</p>
+
+    <h3>Deleting a part.</h3>
+    <p>In Shortcuts, open <strong>All Shortcuts</strong>, touch and hold
+    the part's tile, then tap <strong>Delete</strong>, and
+    <strong>Delete Shortcut</strong> to confirm. iOS says it plainly: the
+    shortcut “will be deleted from all of your iCloud devices.” Delete
+    any copy ending in “2” too. Deleting <strong>Adrift Opens</strong>
+    and <strong>Adrift Closes</strong> stops every timer until you add
+    them again.</p>
+
+    <hr>
+
+    <!-- ============================================================ -->
+    <!-- iOS 17–26 — STAGE 1: Adrift 1.0.1's five steps (#step-1…5)   -->
+    <!-- and its snag section, word for word from the live page; the  -->
+    <!-- App Store's 1.0.1 links #step-1…5. Stage 2, with 1.0.2's     -->
+    <!-- release, swaps in 1.0.2's fourteen cards (#step-1…14).       -->
+    <!-- ============================================================ -->
+
+    <h2 id="classic">On iOS 26 or earlier: the walkthrough</h2>
+    <p>Adrift builds the two parts with you in one visit to Shortcuts. In
+    the app, the walkthrough is a floating video that stays on screen
+    while you build. Below is the same walkthrough, written down: five
+    steps.</p>
     <!-- TODO(video hosting): the full walkthrough video has no public URL
-         yet — the app bundles its clips (ceremony-clip.mov, HEVC ~9 MB)
-         and nothing is hosted as of 2026-08-21. When it is hosted (it
-         will need an H.264/MP4 web encode), (1) embed the player in this
-         section and (2) reword the paragraph above to offer the video
-         itself, e.g.: "Play the full walkthrough on any other screen
-         while you build on your phone: <a href='VIDEO_URL'>the
-         walkthrough video</a>." The app's Stuck? sheet button — "Watch
-         the full walkthrough" — already deep-links to this page
-         (setup-help.html#step-N) expecting the video to live here. -->
+         yet — the app bundles its clips and nothing is hosted. When it is
+         hosted (an H.264/MP4 web encode), embed it here and offer it on a
+         second screen. -->
 
-    <h2>The opening half</h2>
+    <h3>The opening half</h3>
 
     <div class="step" id="step-1">
       <p class="count">Step 1 of 5</p>
@@ -156,7 +525,7 @@
       </div>
     </div>
 
-    <h2>The closing half</h2>
+    <h3>The closing half</h3>
 
     <div class="step" id="step-5">
       <p class="count">Step 5 of 5</p>
@@ -178,7 +547,7 @@
     rehearsal: open your app for a few seconds and close it — each
     half checks green as its signal arrives.</p>
 
-    <h2>Let's find the snag.</h2>
+    <h2 id="snags">Let's find the snag (iOS 26 or earlier).</h2>
     <p>Symptoms first, stated as facts — find yours.</p>
 
     <h3>Nothing has arrived yet.</h3>
@@ -223,10 +592,16 @@
     when one half errors after a reinstall. Rebuilding works too, and
     it's safe over the old ones.</p>
 
-    <h3>Leaving instead?</h3>
-    <p>The <a href="support.html#teardown">20-second cleanup</a> on
-    the support page removes both halves and the app, in the order
-    that never shows an error.</p>
+    <hr>
+
+    <h2>On every iPhone</h2>
+    <p><strong>If you lock your iPhone, the timer stops.</strong> When you
+    unlock back into your app, leave it and open it again — the timer
+    starts again. <a href="support.html#lock">Why</a>.</p>
+    <p><strong>Leaving instead?</strong> The support page removes the
+    parts and the app in the order that never shows an error:
+    <a href="support.html#ios27-teardown">on iOS 27</a>, or
+    <a href="support.html#teardown">on iOS 26 or earlier</a>.</p>
 
     <h2 id="contact">Contact</h2>
     <p>A snag this page doesn't name — email

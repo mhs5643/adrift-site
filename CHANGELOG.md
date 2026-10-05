@@ -2,6 +2,45 @@
 
 Site changes, newest first. Facts, no guilt.
 
+## 2026-10-04 (stage 1, ahead of Adrift 1.0.2)
+
+- **setup-help.html:** a fork at the top sends iOS 27 readers to `#ios27`
+  and iOS 26-or-earlier readers to `#classic`.
+  - **`#ios27` — Adrift 1.0.2's two ready-made parts,** up ahead of its
+    release so its links land. The section opens "From Adrift 1.0.2".
+    The three pack cards (`#pack-step-1…3`) with the app's ringed stills,
+    the check, "good to know" (other iPhones sync switched off; parts
+    built before iOS 27 are named "App", "App 2"; an app installed later;
+    the lock). The editor cards for building the parts yourself
+    (`#editor27-step-01…14`, zero-padded, with stills), and an iOS 27 snag
+    section written from the app's own diagnosis copy. The steps and
+    snags follow the app's copy, with "your app" for the app's name.
+  - **`#classic` — the iOS 26-or-earlier walkthrough is unchanged until
+    Adrift 1.0.2's release:** Adrift 1.0.1's five steps (`#step-1…5`) and
+    its snag section, word for word, now under the fork's second heading.
+  - **On every iPhone:** the lock line, and links to both cleanups.
+- **support.html:**
+  - `#ios27-teardown`: removing Adrift's parts on iOS 27. From Adrift
+    1.0.2, removing one app in Adrift keeps the ready-made parts. Leaving
+    altogether deletes Adrift Opens and Adrift Closes in All Shortcuts
+    (touch and hold → Delete → Delete Shortcut, "This shortcut will be
+    deleted from all of your iCloud devices."), then any parts you built
+    yourself, then the app.
+  - `#teardown` retitled for iOS 26 or earlier, with a pointer up. Its
+    steps are unchanged.
+  - New question `#lock`: the timer stops at a lock; after an unlock,
+    leave the app and open it again. It's the same on every iOS version,
+    so it sits outside the iOS 27 section.
+  - "Do I need two parts for every app?" replaces the old one-pair
+    question: no on iOS 27 from Adrift 1.0.2; yes on iOS 26 or earlier,
+    or before 1.0.2.
+  - The island question no longer says "lock, glance, it's counting": a
+    lock stops a tracked app's timer.
+- **index.html:** the root's fragment forward also sends `#ios27-teardown`
+  to `support.html#ios27-teardown` (the app links the site root). The
+  intro, Setup and Support lines say "parts", as the app does, and
+  describe both setups, the iOS 27 one from Adrift 1.0.2.
+
 ## 2026-10-04
 
 - **privacy.html:** regenerated for Adrift 1.0.2, ahead of its release, to

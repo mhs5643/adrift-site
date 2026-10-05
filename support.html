@@ -119,19 +119,71 @@
 <body>
   <main>
     <h1>Support</h1>
-    <p class="quiet">Last updated August 21, 2026</p>
+    <p class="quiet">Last updated October 4, 2026</p>
 
     <p>Short answers, stated as facts. If yours isn't here, the
     <a href="#contact">email at the bottom</a> reaches us directly.</p>
 
-    <p>Building your tracker? The whole walkthrough, written tap by
-    tap — with the fixes for the common snags — is on the
-    <a href="setup-help.html">setup page</a>.</p>
+    <p>Setting up? Both setups are on the
+    <a href="setup-help.html">setup page</a>, written tap by tap with the
+    fixes for the common snags: the two ready-made parts on iOS 27 (from
+    Adrift 1.0.2), and the walkthrough on iOS 26 or earlier.</p>
 
-    <h2 id="teardown">Leaving Adrift? The 20-second cleanup.</h2>
-    <p>Leaving is fine — the tracker was always yours, not ours. It's
-    two tiny automations per tracked app in Apple's Shortcuts app, and
-    they come out as easily as they went in.</p>
+    <h2 id="ios27-teardown">On iOS 27: removing Adrift's parts</h2>
+
+    <h3>Removing one app in Adrift?</h3>
+    <p>Keep the ready-made parts: from Adrift 1.0.2,
+    <strong>Adrift Opens</strong> and <strong>Adrift Closes</strong>
+    serve every app Adrift tracks.
+    After you remove an app in Adrift, the parts keep listening, and
+    Adrift forgets that app's opens and closes the moment they arrive.
+    If you also built parts for that app yourself (say, “TikTok Start”
+    and “TikTok Stop”), those keep counting until you delete them in
+    Shortcuts.</p>
+
+    <h3>Leaving Adrift altogether?</h3>
+    <p>The parts come out as easily as they went in. Parts first, then
+    the app.</p>
+
+    <div class="step">
+      <p class="count">Step 1 of 3</p>
+      <p>In Shortcuts, open <strong>All Shortcuts</strong>. Touch and hold
+      <strong>Adrift Opens</strong>, tap <strong>Delete</strong>, then
+      <strong>Delete Shortcut</strong>. Do the same for <strong>Adrift
+      Closes</strong>, and for any copy ending in “2”.</p>
+      <p class="negative">iOS asks once more, and means it: the delete
+      reaches every iPhone on your Apple ID. When you're leaving, that's
+      what you want.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mockrow">
+          <span class="sub">This shortcut will be deleted from all of your iCloud devices.</span>
+          <span class="delete">Delete Shortcut</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="count">Step 2 of 3</p>
+      <p>Delete any parts you built yourself the same way: the ones named
+      after your apps, or “App”, “App 2” if you built them before
+      iOS 27.</p>
+    </div>
+
+    <div class="step">
+      <p class="count">Step 3 of 3</p>
+      <p>Delete the Adrift app itself, like any other app.</p>
+      <p class="negative">Parts first, then the app.</p>
+    </div>
+
+    <p>That's the whole exit. No account to close, nothing left
+    running, nothing left behind.</p>
+
+    <h2 id="teardown">On iOS 26 or earlier: the 20-second cleanup</h2>
+    <p>Leaving is fine — the tracker was always yours, not ours. On iOS
+    26 or earlier it's two tiny automations per tracked app in Apple's
+    Shortcuts app, and they come out as easily as they went in. On
+    iOS 27, see <a href="#ios27-teardown">removing Adrift's parts</a>
+    above.</p>
     <p class="quiet">About 20 seconds · two swipes per tracked app</p>
 
     <div class="step">
@@ -198,21 +250,30 @@
 
     <h2>Questions</h2>
 
-    <h3>Can one automation cover all my apps?</h3>
-    <p>No. The Shortcuts trigger can watch several apps at once, but
-    the action inside can record only one, so every session from the
-    other apps would be logged under the wrong name. One open and one
-    close automation per tracked app is what keeps your numbers
-    honest.</p>
+    <h3 id="lock">What happens when I lock my iPhone?</h3>
+    <p>The timer stops when you lock. When you unlock back into the app,
+    Adrift can't tell, so leave the app and open it again, and the timer
+    starts again. It's the same on every iOS version. Adrift never counts
+    time it can't see: it would rather undercount than guess.</p>
+
+    <h3>Do I need two parts for every app?</h3>
+    <p>From Adrift 1.0.2, on iOS 27, no. Adrift's two ready-made parts
+    cover every app Adrift can track, and Adrift counts only the apps
+    you've added.</p>
+    <p>On iOS 26 or earlier, or before Adrift 1.0.2, yes. A part's “When”
+    block can watch several apps at once, but its timer step can record
+    only one, so every session from the other apps would be logged under
+    the wrong name. One Start part and one Stop part per tracked app is
+    what keeps your numbers honest.</p>
 
     <h3>Which iPhones show the island timer?</h3>
     <p>Ones with a Dynamic Island: iPhone 14 Pro and 14 Pro Max, and
     every iPhone since — the 15, 16, and 17 lines, and iPhone Air —
     except the iPhone 16e. There, the timer counts at the top of the
-    screen while you scroll. On every other iPhone, your timer lives
-    on the Lock Screen: lock, glance, it's counting. Reminders are
-    the same everywhere — banners at the thresholds you chose,
-    arriving mid-scroll, island or not.</p>
+    screen while you scroll. On every other iPhone, the timer is a Live
+    Activity on the Lock Screen and in Notification Center instead of the
+    island. Reminders are the same everywhere — banners at the
+    thresholds you chose, arriving mid-scroll, island or not.</p>
 
     <h2 id="contact">Contact</h2>
     <p>Setup trouble, a banner that won't quit, or anything else —

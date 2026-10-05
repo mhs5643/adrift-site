@@ -4,11 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adrift</title>
-  <!-- Adrift 1.0.1's remove-app card links the site root + #teardown;
-       land it on the cleanup guide. Without scripts it degrades to this
-       page's top, which links the same guide. -->
+  <!-- Adrift's remove-app card links the site root + #teardown (iOS 26
+       and earlier) or #ios27-teardown (iOS 27, Adrift 1.0.2); land each
+       on its cleanup guide. Without scripts it degrades to this page's
+       top, which links the same guides. -->
   <script>
-    if (location.hash === "#teardown") location.replace("support.html#teardown");
+    if (location.hash === "#teardown" || location.hash === "#ios27-teardown") {
+      location.replace("support.html" + location.hash);
+    }
   </script>
   <style>
     :root {
@@ -56,21 +59,23 @@
     happens, with gentle reminders at thresholds you choose. It states
     facts, never verdicts. No account, no dashboard sprawl, no shame.</p>
 
-    <p>You build the tracker yourself, with two small automations per app
-    in Apple's Shortcuts app, guided step by step. That's the point:
-    Adrift never asks permission to watch you.</p>
+    <p>Your tracker is two small parts in Apple's Shortcuts app, and it
+    lives on your iPhone. From Adrift 1.0.2, on iOS 27, the parts come
+    ready-made; on earlier iOS versions Adrift builds them with you, step
+    by step. That's the point: Adrift never asks permission to watch
+    you.</p>
 
     <h2>Setup</h2>
-    <p>In the app, the walkthrough is a floating video that stays on
-    screen while you build in Shortcuts. The same walkthrough written
-    out tap by tap — with the fixes for the common snags — is on the
+    <p>From Adrift 1.0.2, on iOS 27, you add two ready-made parts and
+    turn them on. On earlier iOS versions, a floating walkthrough video
+    builds them with you in Shortcuts. Both, written out tap by tap with
+    the fixes for the common snags, are on the
     <a href="setup-help.html">setup page</a>.</p>
 
     <h2>Support</h2>
     <p>Setup trouble, a puzzling banner, or leaving and want a clean
     exit — the <a href="support.html">support page</a> has the short
-    answers, including the 20-second cleanup that removes Adrift's
-    automations.</p>
+    answers, including how to remove Adrift's parts cleanly.</p>
     <p>Anything else: email
     <a href="mailto:mschnelbach15@gmail.com">mschnelbach15@gmail.com</a>
     and you'll hear back from one of us.</p>
