@@ -47,41 +47,69 @@
 <body>
   <main>
     <h1>Privacy</h1>
-    <p class="quiet">Last updated July 22, 2026</p>
+    <p class="quiet">Last updated October 4, 2026</p>
 
-    <p>Adrift is built local-first. What you do on your phone stays on
-    your phone. This page is the whole story, in plain language.</p>
+    <p>Adrift is built local-first: your sessions, notes, and settings
+    never leave your phone. This page explains the one exception,
+    anonymous analytics, in plain language.</p>
 
     <h2>Your sessions stay on your phone</h2>
     <p>Every session Adrift times — which app, when, for how long — is
     stored only on your device. There is no account, nothing to sign
-    into, no server holding your history, and no way for us to read it.
+    into, no server holding your sessions, and no way for us to read them.
     Your notes to yourself are yours alone; they never leave the phone.</p>
 
-    <h2>The one exception: anonymous funnel events</h2>
-    <p>Adrift sends a small set of anonymous counting events through
+    <h2>The one exception: anonymous analytics</h2>
+    <p>Adrift sends anonymous analytics — counts, not content — through
     <a href="https://telemetrydeck.com">TelemetryDeck</a>, a
-    privacy-focused analytics service that anonymizes everything it
-    receives. These events tell us things like "someone finished setup"
-    so we can see where the app loses people. They carry no session
-    contents, no timestamps of your scrolling, no note text, and nothing
-    that identifies you. Session durations are sent as coarse buckets
-    (like "3–6 minutes"), never exact numbers, and each install carries a
-    random group letter (a/b/c/d) used only to compare app variants.</p>
-    <p>This is the complete list, exactly as it appears inside the app
-    under Settings → Privacy:</p>
+    privacy-focused analytics service. Adrift's own events tell us things
+    like "someone finished setup" so we can see where the app loses
+    people. They carry no session contents, no note text, and nothing that
+    says who you are: no name, email, or Apple ID. The sessions Adrift
+    times are sent only as coarse buckets (like "3–6 minutes"), never
+    exact lengths, though session_ended, like every event, carries the
+    date and time, which is usually the moment the session ended. Each of
+    Adrift's own events also carries this install's random group letter
+    (a/b/c/d), kept only to compare app variants.</p>
+    <p>These are all of Adrift's own events in Adrift 1.0.2, exactly as they
+    appear inside the app under Settings → “Privacy — what leaves the
+    phone”:</p>
     <ul class="events">
       <li>onboarding_started</li>
-      <li>demo_session_started</li>
-      <li>setup_started (which app)</li>
-      <li>automation_start_verified</li>
-      <li>automation_stop_verified</li>
+      <li>recognition_reached</li>
+      <li>app_selected (which app)</li>
+      <li>late_signal_selected (which answer)</li>
+      <li>philosophy_viewed</li>
+      <li>product_reveal_viewed</li>
+      <li>meta_payoff_viewed</li>
+      <li>demo_started</li>
+      <li>demo_left_app</li>
+      <li>demo_returned</li>
+      <li>demo_payoff_viewed</li>
+      <li>tour_replayed</li>
+      <li>setup_started (which app, which screen)</li>
+      <li>automation_start_verified (which screen)</li>
+      <li>automation_stop_verified (which screen)</li>
       <li>first_real_session</li>
       <li>session_ended (duration bucket only)</li>
       <li>reminder_fired</li>
+      <li>reminder_engaged</li>
       <li>app_added (which app)</li>
       <li>repair_started (which app)</li>
-      <li>notification_permission_granted</li>
+      <li>notification_permission_granted (dialog or settings)</li>
+      <li>notification_permission_denied</li>
+      <li>reminder_selected (after 5, after 15, or timer only)</li>
+      <li>plan_confirmed (reminder or timer only)</li>
+      <li>setup_modality (walkthrough, step-by-step cards, the ready-made parts, or the editor cards)</li>
+      <li>walkthrough_a_complete</li>
+      <li>walkthrough_b_complete</li>
+      <li>setup_deferred</li>
+      <li>verify_started</li>
+      <li>recovery_succeeded (which screen)</li>
+      <li>first_test_completed</li>
+      <li>connected_viewed</li>
+      <li>onboarding_completed</li>
+      <li>setup_resumed</li>
       <li>setup_step_reached (step number)</li>
       <li>reminder_silenced</li>
       <li>tracker_suspected_dead (which app)</li>
@@ -92,26 +120,59 @@
       <li>purchase (which product)</li>
       <li>restore_completed</li>
       <li>trial_lapsed</li>
-      <li>free_tier_entered</li>
-      <li>funnel_beat_completed (which step, answered or skipped)</li>
+      <li>free_tier_entered (declined or lapsed)</li>
+      <li>decline_sheet_viewed</li>
       <li>aspiration_selected (which choice)</li>
-      <li>plan_summary_viewed</li>
       <li>trial_reminder_scheduled</li>
       <li>voice_pack_selected (which voice)</li>
       <li>custom_ladder_saved (how many rungs)</li>
+      <li>setup_deeplink_fired (which app, which link)</li>
+      <li>verify_failed (which check failed, which screen)</li>
+      <li>setup_returned (which app)</li>
+      <li>bounce_rescue</li>
+      <li>support_opened (which setup step)</li>
     </ul>
+    <p>Adrift 1.0.1 and earlier also send three events that 1.0.2
+    retired:</p>
+    <ul class="events">
+      <li>demo_session_started</li>
+      <li>funnel_beat_completed (which step, answered or skipped)</li>
+      <li>plan_summary_viewed</li>
+    </ul>
+    <p>TelemetryDeck, the library that sends these events, also sends a
+    signal when it detects a new install, and each time Adrift starts
+    (even in the background, such as when a timer starts or stops) or
+    comes back after five minutes away. It adds standard details to every
+    event: a scrambled ID for this install, a random one for each visit,
+    your iPhone model, iOS and app versions, language, region and time
+    zone, display and accessibility settings such as text size, the date
+    and time, how often and how long Adrift runs, and the day you first
+    opened it. The scrambled ID is a one-way hash made on your phone,
+    never your name or Apple ID. No screen contents, and no app usage
+    beyond what's here.</p>
 
     <h2>Purchases</h2>
     <p>Adrift Pro is bought through Apple. Apple handles the payment; we
     never see your card, your name, or your Apple ID. StoreKit tells the
-    app only whether a purchase or trial is active.</p>
+    app only the state of your purchase or trial (whether it's active,
+    when it ends, and whether it renews) and whether a free trial is
+    still open to your Apple ID.</p>
 
     <h2>What we don't do</h2>
     <p>No tracking across apps or sites. No advertising identifiers. No
     selling or sharing of data — there is nothing to sell. No third-party
-    SDKs beyond TelemetryDeck. The Shortcuts automations you build run
-    entirely on your device, under your control, and you can delete them
-    any time.</p>
+    SDKs beyond TelemetryDeck. The parts you set up for Adrift live in
+    Apple's Shortcuts app, on your iPhone, under your control: you can see
+    them or remove them there anytime. If Shortcuts syncs them to your
+    other devices through iCloud, that sync is Apple's; Adrift keeps no
+    copy of them and can't read them. On iOS 27, the two ready-made parts
+    listen for every app Adrift can track that's on your iPhone when you
+    add them; Adrift counts only the apps you've added and forgets the
+    rest the moment they arrive. If Adrift isn't running when a part
+    reports an open or close, iOS starts it in the background, so
+    TelemetryDeck's start signal (above) goes out with that moment's date
+    and time, even for an app you haven't added. The signal never names
+    the app.</p>
 
     <h2>Contact</h2>
     <p>Questions about any of this:

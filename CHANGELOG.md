@@ -2,6 +2,16 @@
 
 Site changes, newest first. Facts, no guilt.
 
+## 2026-10-04
+
+- **privacy.html:** regenerated for Adrift 1.0.2, ahead of its release, to
+  match the app's Privacy screen: all 56 of Adrift's own events, word for
+  word (the page listed 28), with the three 1.0.2 retired marked for 1.0.1
+  installs; what TelemetryDeck's library adds (its own signals, and
+  standard details on every event, the date and time included); and the
+  parts sentence (they live in Apple's Shortcuts app, iCloud sync is
+  Apple's, and on iOS 27 Adrift counts only the apps you've added).
+
 ## 2026-08-21
 
 - Added the setup page, [setup-help.html](setup-help.html), linked prominently
