@@ -115,7 +115,7 @@
 <body>
   <main>
     <h1>Setup</h1>
-    <p class="quiet">Last updated October 4, 2026</p>
+    <p class="quiet">Last updated October 7, 2026</p>
 
     <p>Your tracker is two small parts in Apple's Shortcuts app. One
     starts the timer when your app opens, and one stops it when your
@@ -124,7 +124,7 @@
 
     <div class="fork">
       <a href="#ios27"><strong>iOS 27 or later</strong>
-        <span>From Adrift 1.0.2, two ready-made parts: add them, turn them on, done.</span></a>
+        <span>Two ready-made parts: add them, turn them on, done.</span></a>
       <a href="#classic"><strong>iOS 26 or earlier</strong>
         <span>A walkthrough that builds the two parts with you.</span></a>
     </div>
@@ -137,9 +137,8 @@
     <!-- ============================================================ -->
 
     <h2 id="ios27">On iOS 27: two ready-made parts</h2>
-    <p>From Adrift 1.0.2, the two parts come ready-made:
-    <strong>Adrift Opens</strong> starts the timer and
-    <strong>Adrift Closes</strong> stops it. You add
+    <p>Adrift's two parts come ready-made: <strong>Adrift Opens</strong>
+    starts the timer and <strong>Adrift Closes</strong> stops it. You add
     each one to Shortcuts and turn them on, and then Adrift checks that
     they work. One pair covers every app Adrift can track. Adrift counts
     only the apps you've added, and forgets the rest the moment they
@@ -451,145 +450,186 @@
     <hr>
 
     <!-- ============================================================ -->
-    <!-- iOS 17–26 — STAGE 1: Adrift 1.0.1's five steps (#step-1…5)   -->
-    <!-- and its snag section, word for word from the live page; the  -->
-    <!-- App Store's 1.0.1 links #step-1…5. Stage 2, with 1.0.2's     -->
-    <!-- release, swaps in 1.0.2's fourteen cards (#step-1…14).       -->
+    <!-- iOS 17–26 — the app's classic Stuck? buttons land on         -->
+    <!-- #step-1…14 (Adrift 1.0.2's seven cards per part).            -->
     <!-- ============================================================ -->
 
     <h2 id="classic">On iOS 26 or earlier: the walkthrough</h2>
     <p>Adrift builds the two parts with you in one visit to Shortcuts. In
     the app, the walkthrough is a floating video that stays on screen
-    while you build. Below is the same walkthrough, written down: five
-    steps.</p>
+    while you build. Below is the same walkthrough, written down: seven
+    steps for the Start part, seven for the Stop part.</p>
     <!-- TODO(video hosting): the full walkthrough video has no public URL
          yet — the app bundles its clips and nothing is hosted. When it is
          hosted (an H.264/MP4 web encode), embed it here and offer it on a
          second screen. -->
 
-    <h3>The opening half</h3>
+    <h3>The Start part</h3>
 
     <div class="step" id="step-1">
-      <p class="count">Step 1 of 5</p>
-      <p>In the sheet Shortcuts opened, search “app”, then tap
-      <strong>App</strong>.</p>
-      <p class="negative">No sheet showing? In Shortcuts: the middle
-      Automation tab, then +. And skip “Time of Day” — Adrift never
-      needs your schedule.</p>
-      <div class="mock" aria-hidden="true">
-        <div class="mockrow"><span class="dim">Search — “app”</span></div>
-        <div class="mockrow on"><span>App</span></div>
-      </div>
+      <p class="count">Step 1 of 14</p>
+      <p>Adrift opens the automation sheet in Shortcuts for you.</p>
+      <p class="negative">Not showing? In Shortcuts, tap the Automation
+      tab, then + in the top corner.</p>
     </div>
 
     <div class="step" id="step-2">
-      <p class="count">Step 2 of 5</p>
-      <p>Pick your app, keep “Is Opened” checked, choose
-      <strong>Run Immediately</strong>, and switch “Notify When Run”
-      off.</p>
-      <p class="negative">Leave “Is Closed” alone — that's the closing
-      half, two steps away.</p>
-      <div class="mock" aria-hidden="true">
-        <div class="mockrow on"><span>Instagram</span></div>
-        <div class="mockrow"><span>Is Opened</span><span class="tick">✓</span></div>
-        <div class="mockrow"><span class="dim">Is Closed</span><span class="dim">○</span></div>
-        <div class="mockrow on"><span>Run Immediately</span></div>
-      </div>
+      <p class="count">Step 2 of 14</p>
+      <p>Search “app”, then tap <strong>App</strong>.</p>
+      <p class="negative">It's the one that says “When Weather is opened
+      or closed.”</p>
     </div>
 
     <div class="step" id="step-3">
-      <p class="count">Step 3 of 5</p>
-      <p>Choose <strong>Create New Shortcut</strong>, scroll down to
-      Adrift.</p>
-      <p class="negative">Not Stop App Timer yet — that one notices
-      you leave.</p>
-      <p class="negative">On older iOS the same button reads “New
-      Blank Automation.”</p>
+      <p class="count">Step 3 of 14</p>
+      <p>Tap Choose and pick your app. Leave <strong>Is Opened</strong>
+      selected.</p>
+      <p class="negative">Is Closed stays off — that's the Stop part.</p>
       <div class="mock" aria-hidden="true">
-        <div class="mockrow on"><span>Create New Shortcut</span></div>
-        <div class="mockrow on"><span>Adrift</span></div>
-        <div class="mockrow on"><span>Start App Timer</span></div>
+        <div class="mockrow"><span>Is Opened</span><span class="tick">✓</span></div>
+        <div class="mockrow"><span class="dim">Is Closed</span><span class="dim">○</span></div>
       </div>
     </div>
 
     <div class="step" id="step-4">
-      <p class="count">Step 4 of 5</p>
-      <p>Pick <strong>Start App Timer</strong>, set its App to your
-      app — Shortcuts likes to be told twice — then tap Done. The
-      opening half is built.</p>
-      <p class="negative">Don't rename anything — names never matter
-      here.</p>
-      <div class="mock" aria-hidden="true">
-        <div class="mockrow"><span class="dim">Start App Timer</span></div>
-        <div class="mockrow on"><span>App: Instagram</span></div>
-      </div>
+      <p class="count">Step 4 of 14</p>
+      <p>Tap <strong>Run Immediately</strong>, leave Notify When Run off,
+      then tap Next.</p>
+      <p class="negative">If it says Run After Confirmation, tap Run
+      Immediately instead.</p>
     </div>
 
-    <h3>The closing half</h3>
-
     <div class="step" id="step-5">
-      <p class="count">Step 5 of 5</p>
-      <p>Still in Shortcuts, tap + for the closing half: App → your
-      app → “Is Closed” → Run Immediately → <strong>Stop App
-      Timer</strong>, App set to your app. Then come back to
-      Adrift.</p>
-      <p class="negative">This time “Is Opened” stays off — noticing
-      you leave is the whole point.</p>
+      <p class="count">Step 5 of 14</p>
+      <p>Tap <strong>Create New Shortcut</strong>.</p>
+      <p class="negative">It's the gray box at the top. On older iOS the
+      same button reads “New Blank Automation.”</p>
+    </div>
+
+    <div class="step" id="step-6">
+      <p class="count">Step 6 of 14</p>
+      <p>Find Adrift in the list, or search for it, and tap
+      <strong>Start App Timer</strong>.</p>
+      <p class="negative">Not Stop App Timer yet — that one is the Stop
+      part.</p>
+    </div>
+
+    <div class="step" id="step-7">
+      <p class="count">Step 7 of 14</p>
+      <p>Tap App, choose your app again, then tap the checkmark.</p>
+      <p class="negative">The App field starts empty — the timer needs to
+      know which app.</p>
+    </div>
+
+    <h3>The Stop part</h3>
+
+    <div class="step" id="step-8">
+      <p class="count">Step 8 of 14</p>
+      <p>Back on the Automation tab, tap + in the top corner again.</p>
+      <p class="negative">You'll see the first part listed — that's
+      right.</p>
+    </div>
+
+    <div class="step" id="step-9">
+      <p class="count">Step 9 of 14</p>
+      <p>Search “app”, then tap <strong>App</strong>.</p>
+      <p class="negative">It's the one that says “When Weather is opened
+      or closed.”</p>
+    </div>
+
+    <div class="step" id="step-10">
+      <p class="count">Step 10 of 14</p>
+      <p>Tap Choose and pick your app again. This time, tap
+      <strong>Is Closed</strong>.</p>
+      <p class="negative">Tap Is Closed, then tap Is Opened to turn it
+      off. One box checked, not both.</p>
       <div class="mock" aria-hidden="true">
         <div class="mockrow"><span class="dim">Is Opened</span><span class="dim">○</span></div>
         <div class="mockrow"><span>Is Closed</span><span class="tick">✓</span></div>
-        <div class="mockrow on"><span>Stop App Timer</span></div>
-        <div class="mockrow"><span class="dim">App: Instagram</span></div>
       </div>
     </div>
 
-    <p>Back in Adrift, the walkthrough is already listening. The
-    rehearsal: open your app for a few seconds and close it — each
-    half checks green as its signal arrives.</p>
+    <div class="step" id="step-11">
+      <p class="count">Step 11 of 14</p>
+      <p>Tap <strong>Run Immediately</strong>, leave Notify When Run off,
+      then tap Next.</p>
+      <p class="negative">If it says Run After Confirmation, tap Run
+      Immediately instead.</p>
+    </div>
+
+    <div class="step" id="step-12">
+      <p class="count">Step 12 of 14</p>
+      <p>Tap <strong>Create New Shortcut</strong>.</p>
+      <p class="negative">It's the gray box at the top.</p>
+    </div>
+
+    <div class="step" id="step-13">
+      <p class="count">Step 13 of 14</p>
+      <p>Find Adrift in the list, or search for it, and tap
+      <strong>Stop App Timer</strong>.</p>
+      <p class="negative">Stop App Timer this time — it stops the timer
+      when your app closes.</p>
+    </div>
+
+    <div class="step" id="step-14">
+      <p class="count">Step 14 of 14</p>
+      <p>Tap App, choose your app once more, then tap the checkmark.</p>
+      <p class="negative">Both parts are saved. Head back to Adrift.</p>
+    </div>
+
+    <p>Back in Adrift, the walkthrough is already listening. Open your
+    app for a few seconds and close it: each part checks green as its
+    signal arrives.</p>
 
     <h2 id="snags">Let's find the snag (iOS 26 or earlier).</h2>
-    <p>Symptoms first, stated as facts — find yours.</p>
+    <p>Symptoms first, stated as facts. Find yours.</p>
 
     <h3>Nothing has arrived yet.</h3>
-    <p>Both halves live in Shortcuts — one watching “Is Opened”, one
-    “Is Closed”, each running its timer step with App set to your app,
-    Run Immediately chosen, “Notify When Run” off. Already built them?
-    Open each one and back out — that alone often re-links them. Then
-    the rehearsal: open your app for a few seconds and close it.</p>
+    <p>Both parts live in Shortcuts, one watching “Is Opened” and one
+    “Is Closed”. Each runs its timer step with App set to your app, Run
+    Immediately chosen, and “Notify When Run” off. Already built them?
+    Open each one and back out; that alone often re-links them. Then
+    open your app for a few seconds and close it.</p>
 
-    <h3>The open landed — the close didn't.</h3>
-    <p>In Shortcuts, check the closing half: it watches for your app
-    “Is Closed” and runs Stop App Timer with App set to your app — Run
-    Immediately chosen, “Notify When Run” off. Already built? Open it
-    and back out — that alone often re-links it. Then close your app
+    <h3>The open landed. The close didn't.</h3>
+    <p>In Shortcuts, check the Stop part: it watches for your app “Is
+    Closed” and runs Stop App Timer with App set to your app, with Run
+    Immediately chosen and “Notify When Run” off. Already built? Open it
+    and back out; that alone often re-links it. Then close your app
     again.</p>
 
-    <h3>The close landed — the open didn't.</h3>
-    <p>In Shortcuts, check the opening half: it watches for your app
-    “Is Opened” and runs Start App Timer with App set to your app —
-    Run Immediately chosen, “Notify When Run” off. Already built? Open
-    it and back out — that alone often re-links it. Then open your app
+    <h3>The close landed. The open didn't.</h3>
+    <p>In Shortcuts, check the Start part: it watches for your app “Is
+    Opened” and runs Start App Timer with App set to your app, with Run
+    Immediately chosen and “Notify When Run” off. Already built? Open it
+    and back out; that alone often re-links it. Then open your app
     again.</p>
+
+    <h3>The timer stops the moment it starts.</h3>
+    <p>The Stop part has both boxes checked. Open it, keep
+    <strong>Is Closed</strong>, and tap <strong>Is Opened</strong> to
+    turn it off. One box checked, not both.</p>
 
     <h3>A signal arrived labeled the wrong app.</h3>
-    <p>A half in Shortcuts names the wrong app — check the app it
-    watches for and the App inside its timer step. Every app needs its
-    own pair; one shared half can't tell apps apart.</p>
+    <p>A part in Shortcuts names the wrong app. Check the app it watches
+    for and the App inside its timer step. On iOS 26 and earlier every
+    app needs its own two parts; one shared part can't tell apps
+    apart.</p>
 
     <h3>Shortcuts asks before every run.</h3>
-    <p>That half was saved with Run After Confirmation, so the timer
-    waits on a tap. Open the half and choose Run Immediately — it runs
-    on its own from then on.</p>
+    <p>That part was saved with Run After Confirmation, so the timer
+    waits on a tap. Open the part and choose Run Immediately. It runs on
+    its own from then on.</p>
 
     <h3>A banner announces every open and close.</h3>
-    <p>That's “Notify When Run,” switched on. The half works; the
-    banner just narrates it. Open the half and switch “Notify When
-    Run” off.</p>
+    <p>That's “Notify When Run”, switched on. The part works; the banner
+    just narrates it. Open the part and switch “Notify When Run”
+    off.</p>
 
-    <h3>A half looks right and still won't fire.</h3>
-    <p>Open it in Shortcuts and back out without changing anything —
-    viewing it is enough to re-link the action. This is also the fix
-    when one half errors after a reinstall. Rebuilding works too, and
+    <h3>A part looks right and still won't fire.</h3>
+    <p>Open it in Shortcuts and back out without changing anything.
+    Viewing it is enough to re-link the action. This is also the fix
+    when one part errors after a reinstall. Rebuilding works too, and
     it's safe over the old ones.</p>
 
     <hr>

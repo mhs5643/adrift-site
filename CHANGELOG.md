@@ -2,6 +2,21 @@
 
 Site changes, newest first. Facts, no guilt.
 
+## 2026-10-07 (Adrift 1.0.2)
+
+- **setup-help.html:**
+  - **`#classic` — the walkthrough,** rewritten to Adrift 1.0.2's fourteen
+    cards (`#step-1…14`, seven per part; 1.0.1 had five), following the
+    app's copy. The snag section is kept, reworded in the app's register
+    ("parts"), plus the both-boxes snag.
+  - The fork and the `#ios27` section no longer say "From Adrift 1.0.2":
+    it's out.
+- **support.html:** the iOS 27 lines no longer say "From Adrift 1.0.2".
+  "Do I need two parts for every app?" reads: no on iOS 27, yes on iOS 26
+  or earlier.
+- **index.html:** the intro and Setup lines no longer say "From Adrift
+  1.0.2".
+
 ## 2026-10-04 (stage 1, ahead of Adrift 1.0.2)
 
 - **setup-help.html:** a fork at the top sends iOS 27 readers to `#ios27`
